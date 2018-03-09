@@ -1,20 +1,20 @@
-#_dash Blank Theme Framework for Wordpress
+# _dash Blank Theme Framework for Wordpress
 
 https://bitbucket.org/marcelbadua/_dash
 
 Dash is a blank theme framework for Wordpress. Better used with a child theme.
 
-##Updates
+## Updates
 
 ### 3.0.0
 - remove breadcrumb
 - remove extra details
 
-###2.1.0
+### 2.1.0
 - Extra Page details
 - Github Updater
 
-###2.0.0
+### 2.0.0
 - Site Information
 - Built-in pagination and breadcrumb functions
 - Widgets for sidebar and footer
