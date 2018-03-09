@@ -1,0 +1,5 @@
+<section class="post-content">
+<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+<?php the_content(); ?>
+<div class="post-links"><?php wp_link_pages(); ?></div>
+</section>
