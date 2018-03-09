@@ -1,7 +1,5 @@
 # _dash Blank Theme Framework for Wordpress
 
-https://bitbucket.org/marcelbadua/_dash
-
 Dash is a blank theme framework for Wordpress. Better used with a child theme.
 
 ## Updates
