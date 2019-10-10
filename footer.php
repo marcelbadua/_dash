@@ -2,39 +2,34 @@
 /**
 * Footer Template
 *
-* @package dash
+* @package _ballistix 3.0.0
 */ ?>
+        </div>
 
-		</main>
+      </main>
 
-		<footer id="site-footer" role="contentinfo">
+      <footer id="site-footer" role="contentinfo">
 
-        <?php if (is_active_sidebar('widget-footer')): ?>
+        <div class="container">
 
-        	<aside id="footer-widget" role="complementary">
+          <?php if (is_active_sidebar('widget-footer')): ?>
 
-       				<?php dynamic_sidebar('widget-footer'); ?>
+            <aside id="widget-footer" role="complementary">
 
-        	</aside>
+              <?php dynamic_sidebar('widget-footer'); ?>
 
-        <?php endif; ?>
+            </aside>
 
+          <?php endif; ?>
 
+        </div>
 
-		    <div id="copyright">
-        	<?php printf('&copy; %1$s <a href="%2$s" title="%3$s">%3$s</a> - %4$s', date( "Y" ), home_url() ,get_bloginfo( 'name' ), get_bloginfo( 'description' )); ?>
+      </footer>
 
-          <a class="rss" href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Syndicate this site using RSS'); ?>">RSS</a>
+    </div>
 
-		    </div>
+    <?php wp_footer(); ?>
 
-
-		</footer>
-
-	</div>
-
-<?php wp_footer(); ?>
-
-</body>
+  </body>
 
 </html>

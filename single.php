@@ -11,7 +11,11 @@
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php get_template_part( 'template/entry' ); ?>
+    <?php
+
+      _dash_breadcrumbs();
+
+      get_template_part( 'template/entry' ); ?>
 
     <?php endwhile; endif; ?>
 

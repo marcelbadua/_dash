@@ -30,20 +30,10 @@ if ( ! function_exists( '_dash_setup' ) ) :
         add_theme_support( 'post-thumbnails' );
 
         /**
-         * Enable support for Post Formats
-        */
-        add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-
-        /**
          * Make theme available for translation
          * Translations can be filed in the /languages/ directory
         */
         load_theme_textdomain('_dash', get_template_directory() . '/languages');
-
-        /**
-         * This theme uses wp_nav_menu() in one location.
-        */
-        register_nav_menus(array('menu-main' => __('Main Menu', '_dash')));
 
         /**
          * Enable support for HTML5 Forms
@@ -91,7 +81,22 @@ function _dash_widgets_init() {
 }
 add_action('widgets_init', '_dash_widgets_init');
 
-/**
- * Add Admin Function
- */
-require get_template_directory() . '/admin/dash-admin.php';
+if ( version_compare($GLOBALS['wp_version'], '5.0-beta', '>') ) {
+// WP > 5 beta
+    add_filter( 'use_block_editor_for_post_type', '_dash_disable_gutenberg_on_page', 10, 2 );
+} else {
+    // WP < 5 beta
+    add_filter( 'gutenberg_can_edit_post_type', '_dash_disable_gutenberg_on_page', 10, 2 );
+};
+
+function _dash_disable_gutenberg_on_page( $is_enabled, $post_type ) {
+    if ( 'page' == $post_type ) {
+        return false;
+    }
+
+    return $is_enabled;
+}
+
+foreach ( glob( get_template_directory() . "/functions/*.php") as $file) {
+  require $file;
+}

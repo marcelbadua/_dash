@@ -21,11 +21,17 @@
 
         </header>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+        <div class="post-loop">
 
-            <?php get_template_part( 'template/entry' ); ?>
+          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <?php endwhile; ?>
+              <?php get_template_part( 'template/entry' ); ?>
+
+          <?php endwhile; endif; ?>
+
+        </div>
+
+        <?php _dash_pagination(); ?>
 
         <div class="clearfix">&nbsp;</div>
 
